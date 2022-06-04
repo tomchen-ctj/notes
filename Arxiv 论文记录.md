@@ -68,3 +68,11 @@ Text-video generation by VQVAE. [link](https://arxiv.org/pdf/2205.15868.pdf)
 
 The semantic relationship between samples should be considered during contrastive learning. Employing the idea of PCA on augmentation feature that encodes information about the augmentation distributions. [link](https://arxiv.org/pdf/2206.00471.pdf)
 
+## Siamese Image Modeling for Self-Supervised Vision Representation Learning
+
+Author thinks that contrasting different augmented views can help to lean semantic alignment. So they propose siamese image modeling, using a masked online branch and a full augmented target branch to calculate Dense loss. [link](https://arxiv.org/pdf/2206.01204.pdf)
+
+## Hard Negative Sampling Strategies for Contrastive Representation Learning
+
+Hard samples : close to the decision boundary and far from each other. Calculating the contrastive loss between hard samples may help  contrastive learning. [link](https://arxiv.org/pdf/2206.01197.pdf)
+
