@@ -70,9 +70,20 @@ The semantic relationship between samples should be considered during contrastiv
 
 ## Siamese Image Modeling for Self-Supervised Vision Representation Learning
 
-Author thinks that contrasting different augmented views can help to lean semantic alignment. So they propose siamese image modeling, using a masked online branch and a full augmented target branch to calculate Dense loss. [link](https://arxiv.org/pdf/2206.01204.pdf)
+(Jifeng Dai)The author thinks that contrasting different augmented views can help to lean semantic alignment. So they propose siamese image modeling, using a masked online branch and a full augmented target branch to calculate Dense loss. [link](https://arxiv.org/pdf/2206.01204.pdf)
 
 ## Hard Negative Sampling Strategies for Contrastive Representation Learning
 
-Hard samples : close to the decision boundary and far from each other. Calculating the contrastive loss between hard samples may help  contrastive learning. [link](https://arxiv.org/pdf/2206.01197.pdf)
+Hard samples: close to the decision boundary and far from each other. Calculating the contrastive loss between hard samples may help contrastive learning. [link](https://arxiv.org/pdf/2206.01197.pdf)
 
+## Revisiting the “Video” in Video-Language Understanding
+
+(Feifei Li)Propose the atemporal probe (ATP) for video-language analysis. Provide a strong baseline for video-language tasks. [link](https://arxiv.org/pdf/2206.01720.pdf)
+
+## Egocentric Video-Language Pretraining
+
+(ShowLab) 1. Create EgoClip, a new dataset for video-text pretraining (a subset of Ego4D). 2. Propose EgoNCE that adapts video-text contrastive learning to egocentric domain by mining egocentric-aware positive and negative samples. [link](https://arxiv.org/pdf/2206.01670.pdf)
+
+## Rethinking Positive Sampling for Contrastive Learning with Kernel
+
+Propose a new way to define positive samples using kernel theory along with a novel loss called decoupled uniformity. [link](https://arxiv.org/pdf/2206.01646.pdf)
