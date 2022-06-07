@@ -87,3 +87,33 @@ Hard samples: close to the decision boundary and far from each other. Calculatin
 ## Rethinking Positive Sampling for Contrastive Learning with Kernel
 
 Propose a new way to define positive samples using kernel theory along with a novel loss called decoupled uniformity. [link](https://arxiv.org/pdf/2206.01646.pdf)
+
+## Team VI-I2R Technical Report on EPIC-KITCHENS-100 Unsupervised Domain Adaptation Challenge for Action Recognition 2021
+
+Technical report. Contains hand-centric feature generation & video domain adaptation. For feature generation part, using joint TBN & TSM architecture; for the domain adaptation part, adapt TA3N. [link](https://arxiv.org/pdf/2206.02573.pdf)
+
+## Invariant Grounding for Video Question Answering
+
+In VideoQA tasks, empirical risk minimization may lead to some problems, because it tends to over-exploit the spurious correlations between question irrelevant scenes and answers. Authors partition the visual scenes into two parts:1) the visual scene, and 2) it's component which is irrelevant to the answer. The author claims that the causal scene is expected to be sufficient and necessary to answer the question, and no critical clues should exist in the complement scene to answer the question. [link](https://arxiv.org/pdf/2206.02349.pdf)
+
+*VideoQA common paradigm: 1) video-question joint encoder, encapsulates the visual scenes of video and the linguistic semantics of question as representations. 2) answer decoder, exploits the latent to model the visual-linguistic alignment and yield an answer.* 
+
+## Causal Attention for Unbiased Visual Recognition
+
+In IID settings, a model equipped with attention is better; however, in OOD (out of distribution) settings, the attention model is even worse than the non-attention baseline. Authors propose a visual attention module CaaM that learns causal features that are robust in OOD settings without sacrificing the performance in IID settings.
+
+## Rethinking the Openness of CLIP
+
+Though CLIP shows great potential in realizing open-vocabulary image classification in a matching style (e.g. zero-shot image classification/ video classification /open set classification ...), its performances degrade as the vocabulary expands to different degrees, and that is due to the confusion among competing text features, i.e. not stable with respect to the vocabulary. Enforcing the distinguishability of text features could improve the openness of CLIP-based model (even without fine-tuning). [link](https://arxiv.org/pdf/2206.01986.pdf)
+
+1. Traditional evaluation protocols are not sufficient for the open recognition tasks as it has limited and fixed target vocabulary. So 2 novel evaluation protocols are proposed: extensibility & stability.
+
+2. The small margin between text vocabulary leads to the poor stability of CLIP model. It shows in the confusion matrix that the positive pairs' cosine similarity and negative pairs' cosine similarity are very close.
+
+3. CoOp could improve the inter-modal alignment that text feature is towards the cluster center of the corresponding image features. 
+
+4. The original text prompt like "a photo of a [CLASS]" is not optimal, as the same context in the prompt cannot provide holistic and diverse semantics modeling for different visual categories. A better way is to retrieve the captions from pre-training dataset as a prompt ensemble. (The most similar images)
+
+
+## On the duality between contrastive and non-contrastive self-supervised learning
+
