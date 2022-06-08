@@ -114,6 +114,19 @@ Though CLIP shows great potential in realizing open-vocabulary image classificat
 
 4. The original text prompt like "a photo of a [CLASS]" is not optimal, as the same context in the prompt cannot provide holistic and diverse semantics modeling for different visual categories. A better way is to retrieve the captions from pre-training dataset as a prompt ensemble. (The most similar images)
 
+## Can CNNs Be More Robust Than Transformers?
 
-## On the duality between contrastive and non-contrastive self-supervised learning
+With three simple changes, CNN could be as robust as Transformer architecture. 1) patchifying input images, 2) enlarging kernel size, 3) reducing activation layers and normalization layers. Compared to ConvNeXt, this work mainly focus on the robustness of the model.   [link](https://arxiv.org/pdf/2206.03452.pdf)
+
+## TRIBYOL: TRIPLET BYOL FOR SELF-SUPERVISED REPRESENTATION LEARNING
+
+TriBYOL performs better with small batch sizes. One online network and two target networks ( do not share weights). [link](https://arxiv.org/pdf/2206.03012.pdf)
+
+## Revealing Single Frame Bias for Video-and-Language Learning
+
+Training an effective video-and-language model intuitively requires multiple frames as model inputs. But it is unclear that using multiple frames could benefit downstream tasks. Actually, with large-scale pre-training and a proper frame ensemble strategy at inference time, only using one frame performs even better than multiple frames training. 
+
+In training stage, a frame is randomly chosen from a video clip and used for training. During inferece, a list of frames are uniformly sampled and early fuse is used to fuse their encoded image-level representations as input to the multi-modal encoder.  [link](https://arxiv.org/pdf/2206.03428.pdf)
+
+
 
