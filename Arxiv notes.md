@@ -128,5 +128,7 @@ Training an effective video-and-language model intuitively requires multiple fra
 
 In training stage, a frame is randomly chosen from a video clip and used for training. During inferece, a list of frames are uniformly sampled and early fuse is used to fuse their encoded image-level representations as input to the multi-modal encoder.  [link](https://arxiv.org/pdf/2206.03428.pdf)
 
+## Extreme Masking for Learning Instance and Distributed Visual Representations
 
+(Zhirong Wu, MSRA) A scalable approach for learning distributed representations over individual tokens. Follows the architecture of BYOL, the momentum encoder processes the full view while the base encoder prosses a partial view from extreme masked sampling. [link](https://arxiv.org/pdf/2206.04667.pdf)
 
