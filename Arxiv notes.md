@@ -130,5 +130,34 @@ In training stage, a frame is randomly chosen from a video clip and used for tra
 
 ## Extreme Masking for Learning Instance and Distributed Visual Representations
 
-(Zhirong Wu, MSRA) A scalable approach for learning distributed representations over individual tokens. Follows the architecture of BYOL, the momentum encoder processes the full view while the base encoder prosses a partial view from extreme masked sampling. [link](https://arxiv.org/pdf/2206.04667.pdf)
+(Zhirong Wu, MSRA) A scalable approach for learning distributed representations over individual tokens. Follows the architecture of BYOL, the target encoder processes the full view while the base encoder prosses a partial view from extreme masked sampling. In this way, the overall complicity of base encoder is greatly reduced. Also, this could naturally provide different-but-correlational views to boost the representation learning.  [link](https://arxiv.org/pdf/2206.04667.pdf)
 
+## SimVP: Simpler yet Better Video Prediction
+
+(Stan Z.Li, Westlake Univ.) Using a very simple architecture (CNN- CNN - CNN) and no extra tricks get sota results on 5 video prediction benchmarks. [link](https://arxiv.org/pdf/2206.05099.pdf)
+
+## An Empirical Study on Disentanglement of Negative-free Contrastive Learning
+
+This work aims at the disentanglement of negative-free contrastive learning methods. Proposes a new disentanglement metric based on Mutual Information between representation and data factors. 
+
+1. Contrastive learning without negatives can learn a well-disentangled subspace of latent representation. 
+
+2.  Existing low-dimensional generative disentangled learning methods can not learn good representation in real-world datasets.
+
+[link](https://arxiv.org/pdf/2206.04756.pdf)
+
+## Lost in Transmission: On the Impact of Networking Corruptions on Video Machine Learning Models
+
+Networking corruptions could apparently affect video models. The corruptions cause visual and temporal artifacts i.e. smeared colors (mosaic) or frame drops. [link](https://arxiv.org/pdf/2206.05252.pdf)
+
+## Spatial Cross-Attention Improves Self-Supervised Visual Representation Learning
+
+Proposes a novel add-on module to facilitate the injection of the knowledge accounting for spatial correlations among the samples. The output of the module is seen as a mask to guide the feature maps. (Prototypes clustering) [link](https://arxiv.org/pdf/2206.05028.pdf)
+
+## Learn2Augment: Learning to Composite Videos for Data Augmentation in Action Recognition
+
+Using a network to decouple the foreground and the background (for background scene, apply image inpainting) [link](https://arxiv.org/pdf/2206.04790.pdf)
+
+## Is Self-Supervised Learning More Robust Than Supervised Learning?
+
+Contrastive learning is prone to patch shuffling and pixel intensity change, yet less sensitive to dataset-level distribution change. Besides, contrastive learning is more robust than supervised learning under downstream corruptions. [link](https://arxiv.org/pdf/2206.05259.pdf)
