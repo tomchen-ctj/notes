@@ -160,4 +160,4 @@ Using a network to decouple the foreground and the background (for background sc
 
 ## Is Self-Supervised Learning More Robust Than Supervised Learning?
 
-Contrastive learning is prone to patch shuffling and pixel intensity change, yet less sensitive to dataset-level distribution change. Besides, contrastive learning is more robust than supervised learning under downstream corruptions. [link](https://arxiv.org/pdf/2206.05259.pdf)
+Contrastive learning is prone to be attacked by patch shuffling and pixel intensity change, yet less sensitive to dataset-level distribution change. Besides, contrastive learning is more robust than supervised learning under downstream corruptions. [link](https://arxiv.org/pdf/2206.05259.pdf)
