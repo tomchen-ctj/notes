@@ -161,3 +161,26 @@ Using a network to decouple the foreground and the background (for background sc
 ## Is Self-Supervised Learning More Robust Than Supervised Learning?
 
 Contrastive learning is prone to be attacked by patch shuffling and pixel intensity change, yet less sensitive to dataset-level distribution change. Besides, contrastive learning is more robust than supervised learning under downstream corruptions. [link](https://arxiv.org/pdf/2206.05259.pdf)
+
+## TRANSDUCTIVE CLIP WITH CLASS-CONDITIONAL CONTRASTIVE LEARNING
+
+Leveraging the supervision of CLIP is a great way to alleviate the burden of data labeling. But directly utilizing the pseudo label from CLIP model may cause the student model to learn label noises. 
+
+1. A class conditional contrastive learning mechanism is proposed to mitigate the reliance on pseudo labels and boost the tolerance to noisy labels. 
+
+2. Ensemble labels is adopted as a pseudo label updating strategy to stabilize the training of deep neural networks with noisy labels. 
+
+   [link](https://arxiv.org/pdf/2206.06177.pdf)
+
+## Multimodal Learning with Transformers: A Survey
+
+Check later, [link](https://arxiv.org/pdf/2206.06488.pdf)
+
+## Masked Autoencoders are Robust Data Augmentors
+
+Reconstruction from masked images can be seen as natural data augmentation, as the reconstructed image is distorted. Patches with top-k attention weight in query remain visible.  [link](https://arxiv.org/pdf/2206.04846.pdf)
+
+## Stand-Alone Inter-Frame Attention in Video Models
+
+Video transformers capture motion by spatial-temporal split attention, however, this way may not be optimal because of the movement of the foreground (people) that patches may not belong to the same objects. A better way is to catch local neighboring region inter-frame. [link](https://arxiv.org/pdf/2206.06931.pdf)
+
