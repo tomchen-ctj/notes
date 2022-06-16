@@ -184,3 +184,25 @@ Reconstruction from masked images can be seen as natural data augmentation, as t
 
 Video transformers capture motion by spatial-temporal split attention, however, this way may not be optimal because of the movement of the foreground (people) that patches may not belong to the same objects. A better way is to catch local neighboring region inter-frame. [link](https://arxiv.org/pdf/2206.06931.pdf)
 
+## Masked Frequency Modeling for Self-Supervised Visual Pre-Training
+
+(Chen Change Loy, NTU) Masked Frequency Modeling, instead of randomly inserting mask tokens to the input embeddings in the spatial domain, shift the perspective to the frequency domain. Masks out a portion of frequency components of the input image and then predicts the missing frequencies on the frequency spectrum. Due to the spatial redundancy, it may be more ideal to reveal underlying image patterns rather than predicting masked patches in the spatial domain. [link](https://arxiv.org/pdf/2206.07706.pdf)
+
+## Masked Siamese ConvNets
+
+(Yann Lecun, Meta AI) The siamese network encourages embedding to be invariant to distortions, masking is the most general and straightforward method that has the potential to be applied to all kinds of inputs. But masked siamese networks require particular inductive bias and practically only work well with VisionTransformers. Apply a high-pass filter before applying masks, and the model accuracy increases.  [link](https://arxiv.org/pdf/2206.07700.pdf)
+
+## A Simple Data Mixing Prior for Improving Self-Supervised Learning
+
+For mixed images that share the same source, they are semantically related and can be treated as additional positive pairs in self-supervised learning. This method is called "SDMP", which helps to achieve better accuracy and out-of-distribution robustness. [link](https://arxiv.org/pdf/2206.07692.pdf)
+
+## LAVENDER: Unifying Video-Language Understanding as Masked Language Modeling
+
+For each video-language downstream tasks, LAVENDER unifies them with masked language modeling, and uses the same MLM head used in pre-training for all downstream tasks. [link](https://arxiv.org/pdf/2206.07160.pdf)
+
+## It’s Time for Artistic Correspondence in Music and Video
+
+(Carl Vondrick, Columbia University) Given query video or query music, recommending a music or a video. Modeling the long-term temporal context of both video& music signal. (Using UnfoNCE, kind like CLIP pre-training) [link](https://arxiv.org/pdf/2206.07148.pdf)
+
+
+
