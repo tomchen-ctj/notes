@@ -202,7 +202,7 @@ For each video-language downstream tasks, LAVENDER unifies them with masked lang
 
 ## It’s Time for Artistic Correspondence in Music and Video
 
-(Carl Vondrick, Columbia University) Given query video or query music, recommending a music or a video. Modeling the long-term temporal context of both video& music signal. (Using UnfoNCE, kind like CLIP pre-training) [link](https://arxiv.org/pdf/2206.07148.pdf)
+(Carl Vondrick, Columbia University) Given query video or query music, recommending a music or a video. Modeling the long-term temporal context of both video& music signal. (Using UnfoNCE, kinda like CLIP pre-training) [link](https://arxiv.org/pdf/2206.07148.pdf)
 
 
 
