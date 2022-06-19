@@ -198,11 +198,30 @@ For mixed images that share the same source, they are semantically related and c
 
 ## LAVENDER: Unifying Video-Language Understanding as Masked Language Modeling
 
-For each video-language downstream tasks, LAVENDER unifies them with masked language modeling, and uses the same MLM head used in pre-training for all downstream tasks. [link](https://arxiv.org/pdf/2206.07160.pdf)
+For each video-language downstream task, LAVENDER unifies them with masked language modeling and uses the same MLM head used in pre-training for all downstream tasks. [link](https://arxiv.org/pdf/2206.07160.pdf)
 
 ## It’s Time for Artistic Correspondence in Music and Video
 
-(Carl Vondrick, Columbia University) Given query video or query music, recommending a music or a video. Modeling the long-term temporal context of both video& music signal. (Using UnfoNCE, kinda like CLIP pre-training) [link](https://arxiv.org/pdf/2206.07148.pdf)
+(Carl Vondrick, Columbia University) Given query video or query music, recommending a music or a video. Modeling the long-term temporal context of both video& music signals. (Using InfoNCE, kinda like CLIP pre-training) [link](https://arxiv.org/pdf/2206.07148.pdf)
 
+## MixGen: A New Multi-Modal Data Augmentation
 
+(Mu Li, AWS) Mixup augmentation for image & text pairs. A simple but very strong trick for vision-language pre-training. [link](https://arxiv.org/pdf/2206.08358.pdf)
 
+## Disentangling visual and written concepts in CLIP
+
+(Antonio Torralba, MIT) CLIP has a strong ability to match nonsense words, and the image encoder has an ability to match word images with natural images of scenes described by those words. Author's work is able to cleanly sepatrate spelling capabilities of CLIP from the visual processing of natural images. [link](https://arxiv.org/pdf/2206.07835.pdf)
+
+## OmniMAE: Single Model Masked Pretraining on Images and Videos
+
+(FAIR) Transformer can provide a single unified model for multiple visual modalities. But prior attempts at unified modeling typically use architectures tailored for vision tasks or obtain worse performance compared to single modality models. In this work, authors show that masked autoencoding can be used to train a simple Vision Transformer on images and videos and the single model learns visual representations that are comparable or even better than single-modality representations on both image and video benchmarks. [link](https://arxiv.org/pdf/2206.08356.pdf)
+
+## Beyond Supervised vs. Unsupervised: Representative Benchmarking and Analysis of Image Representation Learning
+
+Different self-supervised learning evaluation benchmarks such as linear probe, NN, K-Means leads to different results. And as single benchmark does not tell the whole story, authors propose two novel metrics: Nearest neighbor graph similarity and linear prediction overlap. [link](https://arxiv.org/pdf/2206.08347.pdf)
+
+## iBoot: Image-bootstrapped Self-Supervised Video Representation Learning
+
+Due to the lack of amount of video datasets, and the prohibitive computation overhead of video datasets. Directly learning self-supervised representations from video data might result in sub-optimal performance. Utilize a image-based model pre-trained with self- or language supervision enables the model to learn strong spatial and temporal information without relying on the video labeled data. 
+
+iBoot architecture: A frozen Image-based target network and a 3D ResNet online network with a linear mapping head. (Quite like BYOL without EMA) [link](https://arxiv.org/pdf/2206.08339.pdf)
