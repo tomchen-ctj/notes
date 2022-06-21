@@ -225,3 +225,19 @@ Different self-supervised learning evaluation benchmarks such as linear probe, N
 Due to the lack of amount of video datasets, and the prohibitive computation overhead of video datasets. Directly learning self-supervised representations from video data might result in sub-optimal performance. Utilize a image-based model pre-trained with self- or language supervision enables the model to learn strong spatial and temporal information without relying on the video labeled data. 
 
 iBoot architecture: A frozen Image-based target network and a 3D ResNet online network with a linear mapping head. (Quite like BYOL without EMA) [link](https://arxiv.org/pdf/2206.08339.pdf)
+
+## SimA: Simple Softmax-free Attention for Vision Transformers
+
+Transformer is difficult to deploy in many applications, and it's partly because due to the Softmax layer. Authors propose a novel Softmax-free attention block that normalizes query and key matrices with simple l1 norm instead of Softmax layer. Moreover, changing SimA from multi-head to single-head has only a small effect on the accuracy, which may simplify the attention block further. [link](https://arxiv.org/pdf/2206.08898.pdf)
+
+## UNIFIED-IO: A UNIFIED MODEL FOR VISION, LANGUAGE, AND MULTI-MODAL TASKS
+
+Unified model for a bunch of downstream tasks, the overall architechture is Transformer Encoder - Decoder and for different input and tasks using different additional encoder & decoder. Note that Image serialization using a VQ-VAE. [link](https://arxiv.org/pdf/2206.08916.pdf)
+
+## VLMixer: Unpaired Vision-Language Pre-training via Cross-Modal CutMix
+
+Propose a cross-modal cutmix method for implicit cross-modal alignment learning in unpaired VLP. Attaching cross-modal noise on uni-modal data could guide models to learn token-level interactions across modalities for better denoising. Move image tokens to Language tokens.  [link](https://arxiv.org/pdf/2206.08919.pdf)
+
+## Bridge-Tower: Building Bridges Between Encoders in Vision-Language Representation Learning
+
+Existing vision-language models either use lightweight uni-modal encoders and learn to extract, align and fuse both modalities simultaneously in a cross-modal encoder, or feed the last-layer unimodal features directly into the top cross-modal encoder, ignoring the semantic information at the different levels in the deep uni-modal encoders. Authors propose the Bridge-Tower that consists of a visual encoder, a textual encoder, a cross-modal encoder, and multiple lightweight bridge layers. [link](https://arxiv.org/pdf/2206.08657.pdf)
