@@ -1,4 +1,4 @@
-# Arxiv 论文记录
+# Daily Arxiv Notes
 
 ## A Wireless-Vision Dataset for Privacy Preserving Human Activity Recognition
 
@@ -241,3 +241,34 @@ Propose a cross-modal cutmix method for implicit cross-modal alignment learning 
 ## Bridge-Tower: Building Bridges Between Encoders in Vision-Language Representation Learning
 
 Existing vision-language models either use lightweight uni-modal encoders and learn to extract, align and fuse both modalities simultaneously in a cross-modal encoder, or feed the last-layer unimodal features directly into the top cross-modal encoder, ignoring the semantic information at the different levels in the deep uni-modal encoders. Authors propose the Bridge-Tower that consists of a visual encoder, a textual encoder, a cross-modal encoder, and multiple lightweight bridge layers. [link](https://arxiv.org/pdf/2206.08657.pdf)
+
+## Crafting Better Contrastive Views for Siamese Representation Learning
+
+Random cropping may not the best choise for contrastive learning:
+
+1. False-positive: object vs. background
+2. Trivial pair: too similar for optimization
+
+Propose a novel data augmentation method called contrastive crop: Take semantic information into account and increase variance between positive views. Generate a bounding box of the object from the heatmap. And use the bounding box as a guidance to generate crops. Center-suppressed Sampling: Lower the probability near the center, higher probability at other positions. Larger sampling variance leads to smaller overlap and less similarity. [link](https://openaccess.thecvf.com/content/CVPR2022/papers/Peng_Crafting_Better_Contrastive_Views_for_Siamese_Representation_Learning_CVPR_2022_paper.pdf)
+
+## Vicinity Vision Transformer
+
+For each image patch, the attention weight is adjust based on its 2D Manhattan distance measured by its neighboring patches. In this case, the neighbouring patches will receive stronger attention than far away patches. [link](https://arxiv.org/pdf/2206.10552.pdf)
+
+## Few-Max: Few-Shot Domain Adaptation for Unsupervised Contrastive Representation Learning
+
+The performance of contrastive learning may degrade due to the lack of target datasets, especially for few-shot learning cases. Uses ideas from knowledge distillation and sim2real generation methods to learn a novel representation using a pretrained network as a regularizer.  [link](https://arxiv.org/pdf/2206.10137.pdf)
+
+## CLiMB: A Continual Learning Benchmark for Vision-and-Language Tasks
+
+Existing CL benchmarks have facilitated research on task adaptation and mitigating catastrophic forgetting, but are limited to vision-only and language-only tasks. Authors propose CLiMB to study the challenge of learning multimodal tasks in a CL setting, and to systematically evaluate how upstream continual learning can rapidly generalize to new multimodal tasks in a CL setting. 
+
+CliMB evaluates candidate CL models and learning algorithms in two phases, for phase 1, upstream continual learning: a pre-trained multimodal model is trained on a sequence of vision and language tasks, and evaluated after each task on its degree of Forgetting of past tasks and knowledge transfer to the next task. For phase 2, after each multimodal task the model is evaluated for its downstream Low-Shot transfer capability on both multimodal and unimodal tasks. [link](https://arxiv.org/pdf/2206.09059.pdf)
+
+## Bi-Calibration Networks for Weakly-Supervised Video Representation Learning
+
+Authors propose a new design of mutual calibration between query and text to boost weakly-supervised video representation learning. Couples two calibrations to learn the amendment from text to query and vice versa. Executes clustering on all the titles of the videos searched by an identical query and takes the centroid of each cluster as a text prototype. [link](https://arxiv.org/pdf/2206.10491.pdf)
+
+## Automatic Concept Extraction for Concept Bottleneck-based Video Classification
+
+To decouple the visual representation via concept guides. For complex tasks, the labels and the relationship between visual elements span many frames. So automatically discovering concepts and extracting them is very important. CoDEx identifies a rich set of complex concept abstractions from NL explanations of videos and obviates the need to predefine the amorphous set of concepts. [link](https://arxiv.org/pdf/2206.10129.pdf)
