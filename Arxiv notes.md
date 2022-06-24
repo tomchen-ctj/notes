@@ -272,3 +272,7 @@ Authors propose a new design of mutual calibration between query and text to boo
 ## Automatic Concept Extraction for Concept Bottleneck-based Video Classification
 
 To decouple the visual representation via concept guides. For complex tasks, the labels and the relationship between visual elements span many frames. So automatically discovering concepts and extracting them is very important. CoDEx identifies a rich set of complex concept abstractions from NL explanations of videos and obviates the need to predefine the amorphous set of concepts. [link](https://arxiv.org/pdf/2206.10129.pdf)
+
+## TiCo: Transformation Invariance and Covariance Contrast for Self-Supervised Visual Representation Learning
+
+(Yann LeCun, MAIR) Based on maximizing the agreement among embeddings of different distorted versions of the same image, which pushes the encoder to produce transformation invariant representations. To avoid trivial solutions, regularize the covariance matrix of the embeddings from different images by penalizing low-rank solutions. Can be seen as a variant of MoCo with an implicit memory bank (regularizing the covariance matrix) without additional memory cost. (Barlow-twins) [link](https://arxiv.org/pdf/2206.10698.pdf)
