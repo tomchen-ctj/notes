@@ -276,3 +276,37 @@ To decouple the visual representation via concept guides. For complex tasks, the
 ## TiCo: Transformation Invariance and Covariance Contrast for Self-Supervised Visual Representation Learning
 
 (Yann LeCun, MAIR) Based on maximizing the agreement among embeddings of different distorted versions of the same image, which pushes the encoder to produce transformation invariant representations. To avoid trivial solutions, regularize the covariance matrix of the embeddings from different images by penalizing low-rank solutions. Can be seen as a variant of MoCo with an implicit memory bank (regularizing the covariance matrix) without additional memory cost. (Barlow-twins) [link](https://arxiv.org/pdf/2206.10698.pdf)
+
+## Siamese Contrastive Embedding Network for Compositional Zero-Shot Learning
+
+Compositional zero-shot learning: Recognize unseen compositions formed from seen states and objects during training. Existing methods recognize state and object with two separate classifiers, ignoring the impact of the interaction between seen and unseen composition sets. Other methods try to learn the joint representation of the state-object compositions, but the domain gap is still a severe problem. 
+
+Authors embed the visual feature into a siamese contrastive space to capture **prototypes** of them separately to alleviate the interaction between state and object. A novel module called state transition module is proposed to increase the diversity of training compositions. Firstly, the visual features are projected into state/object-based contrastive spaces to gain the prototypes of state and object. Then, to excavate the discriminative prototypes by contrastive constraints, set up specific databases as positive samples. And a shared irrelevant database is built up as a negative sample set.  [link](https://arxiv.org/pdf/2206.14475.pdf)
+
+## Parameter-Efficient Image-to-Video Transfer Learning
+
+(Hongsheng Li, CUHK) Existing image-to-video transfer learning strategies are typically under a full fine-tuning setting, which is parameter-inefficient since a specific instance of such a large model is resulted for each downstream task. Authors propose to only train a lightweight Spatio-temporal adapter with much fewer parameters for each individual downstream task at a significantly smaller computational cost. 
+
+The module contains only a pair of up & sub sampling and a depthwise-3D convolution layer. (I guess there's a typo in Fig.1.) [link](https://arxiv.org/pdf/2206.13559.pdf)
+
+## SLIC: Self-Supervised Learning with Iterative Clustering for Human Action Videos
+
+Clustering-based video self-supervised learning. 83.2 top1 accuracy on UCF101. The current video self-supervised learning method is done conservatively to avoid false positives.  A typical assumption is that similar clips only occur temporally close within a single video, leading to insufficient examples of motion similarity. Authors propose an iterative clustering method to group similar video instances. This enables to leverage pseudo-labels from the cluster assignments to sample harder positives and negatives. 
+
+Using a triplet margin loss and acquiring pseudo-labels from the cluster assignments to sample triplets. The total loss consists of a temporal discrimination loss and an instance-based triplet loss. 
+
+1. Iterative Clustering
+
+   Adopt the FINCH algorithm to obtain pseudo-labels from clustering the video embeddings, which could discover groupings in the data by linking the first neighbor relations of each sample, and hence does not require any prior knowledge of the data distribution. Concretely, FINCH computes the first neighbor for each video instance in the feature space using the cosine distance metric. Then FINCH will generate an adjacency link matrix that links each video instance to its first neighbors.
+
+2. Instance-based Triplet Loss
+
+   To sample harder positives and negatives during training. Hard positives are defined as different videos from the same semantic class, while hard negatives are defined as samples that are closer to the anchor than the positive. Also, multi-view positive is adopted as optical flow is used as the second view in addition to RGB. The RGB clip will be replaced with optical flow with a probability.
+
+3. Temporal Discrimination Loss
+
+   Given an anchor clip x, the positive clip is designated as the spatial augmentation of the anchor clip. The negative is any temporally non-overlapping clip from the same instance or from a different instance in the same cluster. 
+
+Limitation: it's sensitive to the false positive and false negative rate.
+
+## 
