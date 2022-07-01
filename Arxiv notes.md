@@ -309,4 +309,47 @@ Using a triplet margin loss and acquiring pseudo-labels from the cluster assignm
 
 Limitation: it's sensitive to the false positive and false negative rate.
 
-## 
+## On-Device Training Under 256KB Memory
+
+(Ji Lin, Song Han, MIT) Very cool stuff. Including quantization-aware scaling, sparse update, tiny training engine that enables lifelong learning on an STM32 chip. [link](https://arxiv.org/pdf/2206.15472.pdf)
+
+## Exploring Temporally Dynamic Data Augmentation for Video Recognition
+
+Few existing augmentation recipes for video recognition naively extend the image augmentation methods by applying the same operations to the whole video frames. Authors propose DynaAugment. The magnitude of augmentation operations on each frame is changed by an effective mechanism. 
+
+Based on Fourier analysis, an arbitrary signal can be decomposed into multiple basis functions. All of the temporal variations can be represented by the random weighted sum of diverse-frequency sinusoidal basis functions. Temporal variations are defined as geometrically and photometrically. In a word, the magnitude of the augmentation is ever-changing and follows a Fourier way. Boosts the performance about 1.7% for SlowFast. 
+
+Limitation: Lack of finding these recipes combined with other augmentation and regularization methods. [link](https://arxiv.org/pdf/2206.15015.pdf)
+
+## ReCo: Retrieve and Co-segment for Zero-shot Transfer
+
+(Weidi, SJTU) Curate training sets from unlabelled images by leveraging the retrieval abilities of CLIP. 
+
+The overall workflow is:
+
+1. Retrieval 
+
+   Given a large-scale unlabelled dataset and a category to segment, curate an archive of k images from the unlabelled dataset using CLIP.
+
+2. Co-segmentation
+
+   Using a pre-trained visual encoder to extract dense features from the archive images, which are used to generate a reference image embedding for the given category via a co-segmentation process.
+
+3. Inference
+
+   During inference, the reference image is employed to produce an initial segmentation of the target concept which is refined with DenseCLIP.
+
+[link](https://arxiv.org/pdf/2206.07045.pdf)
+
+## DenseCLIP: Language-Guided Dense Prediction with Context-Aware Prompting
+
+(Yongming Rao, THU) To better leverage the pre-trained knowledge from CLIP, convert the original image-text matching problem in CLIP to a pixel-text matching problem and use the pixel-text score maps to guide the learning of dense prediction models. (Detection, segmentation, etc) [link](https://openaccess.thecvf.com/content/CVPR2022/papers/Rao_DenseCLIP_Language-Guided_Dense_Prediction_With_Context-Aware_Prompting_CVPR_2022_paper.pdf)
+
+## Exploiting Transformation Invariance and Equivariance for Self-supervised Sound Localisation
+
+(Weidi) The composition of data augmentations plays a critical role in sound localizing tasks. Also enforcing geometric consistency substantially improves the quality of learned representations (the detected source should follow the same transformation applied on input video frames i.e. transformation equivariance). 
+
+The main difference between this work and LVS [Honglie Chen et al] is to explore the impact of image data augmentation on audio localisation tasks. The overall framework is a siamese network with two identical branches. As for audio augmentations, randomly masking a period of the audio spectrogram. And for visual frames, the transformations were split into two groups: appearance transformations (gaussian, jittering, grayscale) and geometrical transformations(geometrical shapes and locations). [link](https://arxiv.org/pdf/2206.12772.pdf)
+
+  
+
