@@ -351,5 +351,69 @@ The overall workflow is:
 
 The main difference between this work and LVS [Honglie Chen et al] is to explore the impact of image data augmentation on audio localisation tasks. The overall framework is a siamese network with two identical branches. As for audio augmentations, randomly masking a period of the audio spectrogram. And for visual frames, the transformations were split into two groups: appearance transformations (gaussian, jittering, grayscale) and geometrical transformations(geometrical shapes and locations). [link](https://arxiv.org/pdf/2206.12772.pdf)
 
-  
+## RegMixup: Mixup as a Regularizer Can Surprisingly Improve Accuracy and Out Distribution Robustness
+
+Traditional mixup may have several problems: 1. Entropy is higher (due to the smoothed label) 2. The model has only seen mixed labels. 3. The augmentation is not strong enough
+
+Authors propose RegMixup, an explicit assembly of ERM and VRM-based approximations to data distribution. Actually, this algorithm just applies mixup as a regularization term to fix the overall Cross-Entropy loss. Besides, the basic mixup applies Beta distribution with parameter α=0.1, and RegMixup applies α=10. Generates more interpolated data. [link](https://arxiv.org/abs/2206.14502)
+
+## Mixed Sample Data Augmentation
+
+1. **Gridmask data augmentation**
+
+   Grid-wise data cutout.
+
+2. **SmoothMix: a Simple Yet Effective Data Augmentation to Train Robust Classifiers**
+
+   Instead of straight forward cutmix, apply a gaussian kernel to smooth the mix boundary.
+
+3. **FMix: Enhancing Mixed Sample Data Augmentation**
+
+   The augmentation region is not square. Apply more generated mixup square. (Saliency map way & tradition way)
+
+   Apply a Fourier transformation and a low-pass filter to generate the mask. (Low-frequency regions could infers those consistency region)
+
+4. **Manifold Mixup: Better Representations by Interpolating Hidden States**
+
+   Apply mixup at latent space. 
+
+5. **AugMix: A Simple Data Processing Method to Improve Robustness and Uncertainty**
+
+   Prior data augmentation is in a chain. (Polarize -> rotation -> jittering ->....) A better way is mixing up shorter chains. Jensen-Shannon Divergence Consistency Loss is applied to guarantee consistency in the latent space for different augmented views. 
+
+6. **Un-Mix: Rethinking Image Mixtures for Unsupervised Visual Representation Learning**
+
+   In the case of contrastive learning, the training signal is very strong to divide the positive and negetive samples to the contrastive decision boundary (the margin is huge), which is 'over-confidence' and may lead to performance degradation. 
+
+   Without a memory bank: I1 & I2 is defined as a different image for mixing. Inverse the I2 list to mix with I1. Then the distance between I1 & I2 is defined as mixup rate lambda. 
+
+   With a memory bank: Negative pairs can be {original, original}, {original, mixed}, {mixed, mixed}. One memory bank with the representations from original/unmixed images is enough to obtain good performance. 
+
+7. **CropMix: Sampling a Rich Input Distribution via Multi-Scale Cropping**
+
+   For an original image, utilizing multiple cropping operations with distinct crop scales to obtain multiple cropped views. 
+
+8. **KeepAugment: A Simple Information-Preserving Data Augmentation Approach**
+
+   Apply a saliency map measuring method to always keep the important regions. 
+
+   To speed up saliency, there are basically 2 ways. First is to using a relatively low resolution to boost the speed. Second is to use a cheap network to generate saliency map.
+
+9. **Attentive CutMix: An Enhanced Data Augmentation Approach for Deep Learning Based Image Classification**
+
+    Utilizing the top 6 attentive patches from a 7*7 grid to generate saliency patches. 
+
+10. **SaliencyMix: A Saliency Guided Data Augmentation Strategy for Better Regularization**
+
+    Select the most salient part of the image to apply the Cutmix method.
+
+11. **Puzzle Mix: Exploiting Saliency and Local Statistics for Optimal Mixup**
+
+    To keep both of the most salient parts in the Cutmix image pairs, transport the axis of the image patch.
+
+12. **TransMix: Attend to Mix for Vision Transformers**
+
+    The original definition of labels in Cutmix data augmentation is using the area ratio. TransMix utilizes the saliency to define labels. 
+
+
 
