@@ -469,9 +469,18 @@ Pretext learning:
 
    Both vidual and text signals. Synchronized from the same video or shifted several seconds. 
 
-Masked modelling should be further investigated in future work.
+Masked modeling should be further investigated in future work.
 
 Generative Approaches:
 
 1. Adversarial and reconstruction
 
+
+
+## GAUSSIAN KERNEL-BASED CROSS MODAL NETWORK FOR SPATIO-TEMPORAL VIDEO GROUNDING
+
+Video grounding, Gaussian kernel based method (anchor-free). [link](https://arxiv.org/pdf/2207.00744.pdf)
+
+## GraphVid: It Only Takes a Few Nodes to Understand a Video
+
+Encode meaningful video features into graphs. By turning image to a mean superpixel representation, reduces the computational requirements 10-fold. [link](https://arxiv.org/pdf/2207.01375.pdf)
