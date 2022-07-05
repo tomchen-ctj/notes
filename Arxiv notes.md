@@ -415,5 +415,63 @@ Authors propose RegMixup, an explicit assembly of ERM and VRM-based approximatio
 
     The original definition of labels in Cutmix data augmentation is using the area ratio. TransMix utilizes the saliency to define labels. 
 
+## SeCo: Exploring Sequence Supervision for Unsupervised Representation Learning
 
+Materialize the supervisory signals through determining whether a pair of samples is from one frame or from one video and whether a triplet of samples is in the correct temporal order. Given an unlabeled video sequence v, firstly sample three frames randomly and take the first frame s in time order as the anchor frame. 
+
+There are 3 pretext tasks in SeCo. 
+
+1. Inter-frame instance discrimination
+
+   Determine whether two frame patches are from the same video. Define all the keys within the same video as positive ones, and the frame patches sampled from other videos in neighboring batches are taken as the negative keys. The objective function in this task is defined as the averaged sum of all the contrastive losses with regard to each positive q-k pair. 
+
+2. Intra-frame instance discrimination
+
+   Distinguish the frame patches of the same frame from the ones of the other frames in a video. Directly boost the spatial perspective. 
+
+3. Temporal order validation
+
+   Whether a series of frame patches are in the correct temporal order. 
+
+## SELF-SUPERVISED LEARNING FOR VIDEOS: A SURVEY
+
+(Mubarak Shah, UCF) The self-supervised learning for videos can be summarized into three different categories based on their learning objectives: 1) pre-text tasks, 2) generative modeling, 3) contrastive learning.
+
+Video has the property that it always comes with audio, and text (speak, captions). The motion could also be seen as a modality. 
+
+Downstream tasks: 
+
+1. action recognition (action classification). Metrics: acc, prec, recall.
+2. action segmentation: temporal localization, find the start and end time of an action and also the type of action in a video clip. Metrics: mAP, frame accuracy, recall. Recall focuses on the proposal of an action during a time segment and how accurate it is compared to the ground truth and is used for temporal step localization. UIsing mAP utilizes an intersection-over-union for the time dimension (t-IOU) and measures the mean of the average accuracy of all the predicted proposals for all classes. FA measures the accuracy of the model when predicting the action frame-by-frame. 
+3. video retrieval: find similar videos given a query video. Metric: standard retrieval metrics (retrieval, recall, similarity measures). Recall is the fraction of the videos returned that are successfully retrieved that are relevant to the query video (top k). 
+4. text-to-video retrieval: given a text query as input, return corresponding matching videos. 
+5. video captioning: generative task, given an input video clip, return the caption of the clip. 
+
+Pretext learning:
+
+1. Appearance statistics prediction
+
+   Predict or classify an appearance modifying augmentation applied to a clip (Color, rotation, noise). 
+
+2. Playback speed - perform the best
+
+   Modifying the frame selection in a way that the playback speed is altered. Collecting every p frames where p is the playback rate, either speeding up the video or slow it down. Type & speed. 
+
+3. Temporal order classification
+
+   Each video V is split into clips of t frames from the total T frames. Correct order or shuffled order. Clip based or frame based. 
+
+4. Video Jigsaw
+
+   Number of patches that are permuted, leading to too many permutations to select from.
+
+5. Masked Modeling
+
+   Both vidual and text signals. Synchronized from the same video or shifted several seconds. 
+
+Masked modelling should be further investigated in future work.
+
+Generative Approaches:
+
+1. Adversarial and reconstruction
 
