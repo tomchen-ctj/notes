@@ -475,7 +475,29 @@ Generative Approaches:
 
 1. Adversarial and reconstruction
 
+2. Prediction
 
+Contrastive method:
+
+1. View augmentation
+
+   Random resized crop, jitter, grey, rotation. (SimCLR, MOCO)
+
+2. Temporal augmentation
+
+   Modifying the temporal order or the start and end point of a clip. Need temporal coherency. 
+
+3. Spatio-Temporal augmentation
+
+   Time was addressed through motion, that both motion and RGB frames were used for augmentation.(COCLR)
+
+   Uses both temporal and spatial augmentation to generate positive pairs for InfoNCE loss. (CVRL) 
+
+4. Clustering
+
+5. Cross-Modal agreement
+
+   Text-video, audio-video, audio-text-video agreement is ultilized.
 
 ## GAUSSIAN KERNEL-BASED CROSS MODAL NETWORK FOR SPATIO-TEMPORAL VIDEO GROUNDING
 
@@ -484,3 +506,19 @@ Video grounding, Gaussian kernel based method (anchor-free). [link](https://arxi
 ## GraphVid: It Only Takes a Few Nodes to Understand a Video
 
 Encode meaningful video features into graphs. By turning image to a mean superpixel representation, reduces the computational requirements 10-fold. [link](https://arxiv.org/pdf/2207.01375.pdf)
+
+## Segmenting Moving Objects via an Object-Centric Layered Representation
+
+(Weidi, AZ, VGG Oxford) Using object-centric layerd representation model for discovering and segmenting multiple moving objects and inferring their mutual occlusions from optical flow. Comprared to previous works, this work aims at multiple moving objects. An advantage of using solely optical flow is that the domain adaptation problem is largely avoided- this means that the model can be trained on synthetic sequences and applied directly to real sequences without a significant Sim2Real disparity. [link](https://arxiv.org/pdf/2207.02206)
+
+## Federated Self-supervised Learning for Video Understanding
+
+FL for self-supervised video representation learning, got 86.2% Acc on UCF101 dataset. [link](https://arxiv.org/pdf/2207.01975.pdf)
+
+## Unsupervised Salient Object Detection with Spectral Cluster Voting
+
+(Weidi, VGG) Leveraging spectral clustering on self-supervised features. Spectral clustering is a classical graph-theoretic clustering algorithm, which can generate useful segmentation candidates across a range of self-supervised features. (DINO) Propose an effective voting strategy to select the most salient object mask in an image among multiple segmentations generated from different self-supervised features. [link](https://arxiv.org/pdf/2203.12614.pdf)
+
+## SESS: Saliency Enhancing with Scaling and Sliding
+
+Improves saliency by fusing saliency maps extracted from multiple patches at different scales from different areas. [link](https://arxiv.org/pdf/2207.01769.pdf)
