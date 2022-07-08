@@ -522,3 +522,10 @@ FL for self-supervised video representation learning, got 86.2% Acc on UCF101 da
 ## SESS: Saliency Enhancing with Scaling and Sliding
 
 Improves saliency by fusing saliency maps extracted from multiple patches at different scales from different areas. [link](https://arxiv.org/pdf/2207.01769.pdf)
+
+## Hierarchically Decoupled Spatial-Temporal Contrast for Self-supervised Video Representation Learning
+
+Decoupling the learning objective into two contrastive subtasks repectively emphasizing spatial and temporal features. Spatial Contrast(SC) and Temporal Contrast(TC). SC aims at focusing on learning spatial representations. TC emphasizes learning temporal representations. Calculate spatial & temporal InfoNCE loss respectively. 76.2% on UCF101.
+
+## 
+
