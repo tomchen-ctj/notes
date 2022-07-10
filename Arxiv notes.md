@@ -527,5 +527,24 @@ Improves saliency by fusing saliency maps extracted from multiple patches at dif
 
 Decoupling the learning objective into two contrastive subtasks repectively emphasizing spatial and temporal features. Spatial Contrast(SC) and Temporal Contrast(TC). SC aims at focusing on learning spatial representations. TC emphasizes learning temporal representations. Calculate spatial & temporal InfoNCE loss respectively. 76.2% on UCF101.
 
-## 
+## **Contextualized Spatio-Temporal Contrastive Learning with Self-Supervision**
 
+Existing self-supervised learning method enforces persistency of instance representations across views. (SimCLR, Moco, etc.) But this way is suboptimal for learning **spatio-temporally fine-grained features in videos**. Got 89.1%(LP) and 94.8%(FT) on UCF101 dataset.
+
+The semantic consistency across views is particularly true in the image domain because two views are typically generated from the same image. But in the video domain, the view-based contrastive approaches might be less effective as the visual appearance of an instance frequently and drastically changes across frames. Enforcing spatio-temporal persistency throughout the video would lead to representation only encoding minimally shared information across frames.
+
+Also, existing self-supervised methods typically focus on learning representations for holistic visual understanding tasks, as for dense prediction tasks( detection, tracking) those models are enhanced by adding task specific heads. Authors' method includes a projection function to take not only the instance feature but also the context feature into account. **Where the instance feature is extracted from the source view of a video, and the context feature is sampled from the target view.** So the model could learn solid both holistic & local representation.
+
+ConST-CL is a region-based contrastive learning method. The overall architecture is like a detection method. Firstly two views are randomly sampled from one video and their dense representation feature maps are extracted by the base network. Region features are pooled by ROIAlign and a set of context features are sampled from the dense feature maps. The projection head is a transformer and is learned to transform representations from one view to the other guided by the context features. 
+
+## Frame-wise Action Representations for Long Videos via Sequence Contrastive Learning
+
+Existing methods lack the ability to model long-term representations. As networks such as I3D and SlowFast always take short video clips as input and extract global representations to predict the action category. However, frame-wise representations is important for long videos. 
+
+Firstly, construct two augmented views for an input video through a series of spatio-temporal data augmentations. Then two augmented views are feed into a frame-level video encoder to extract dense representations. R50(froze first 4 blocks)-transformation-Transformer-projection head. Temporally adjacent frames are more highly correlated than those far-away ones, **the embedding similarity between the frame and the clip should follow a prior Gaussian distribution of timestamp distance between the frame and the clip**. Using KL divergence to optimize the model.
+
+## **Bridge-Prompt: Towards Ordinal Action Understanding in Instructional Videos**
+
+In a real scenario, multiple correlated human actions commonly occur in particular orders, therefore the ordinal of actions may form semantic meanings.
+
+## Set-Supervised Action Learning in Procedural Task Videos via Pairwise Order Consistency
