@@ -545,9 +545,9 @@ Firstly, construct two augmented views for an input video through a series of sp
 
 ## **Bridge-Prompt: Towards Ordinal Action Understanding in Instructional Videos**
 
-In a real scenario, multiple correlated human actions commonly occur in particular orders, therefore the ordinal of actions may form semantic meanings.
+In a real scenario, multiple correlated human actions commonly occur in particular orders, therefore the ordinal of actions may form semantic meanings. There exists graph-based methods to tackle this problem, but graph-based methods are transductive, which are limited by the prior knowledge of input nodes and edges. 
 
-
+Human language is a powerful tool to depict the ordinal semantics between correlated actions. So authors propose a text-based learning method for instructional video analysis. 
 
 ## Dual Contrastive Learning for Spatio-temporal Representation
 
@@ -571,3 +571,6 @@ The temporal sampler decides whether to process the frame fully or skip to the f
 
 Few-shot action recognition, propose a novel approach that first summarizes each video into compound prototypes consisting of a group of global prototypes and a group of focused prototypes. Check this later. [link](https://arxiv.org/pdf/2207.05515.pdf)
 
+## Bootstrapped Masked Autoencoders for Vision BERT Pretraining
+
+BootMAE, a new approach for vision BERT pretraining. Compares to MAE, BootMAE improves the baseline with 2 core designs: 1) momentum encoder that provides online feature as extra BERT prediction targets. 2) target-aware decoder that tries to reduce the pressure on the encoder to memorize target-specific information in BERT pretraining. [link](https://arxiv.org/pdf/2207.07116.pdf) 
