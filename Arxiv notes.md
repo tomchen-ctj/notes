@@ -574,3 +574,24 @@ Few-shot action recognition, propose a novel approach that first summarizes each
 ## Bootstrapped Masked Autoencoders for Vision BERT Pretraining
 
 BootMAE, a new approach for vision BERT pretraining. Compares to MAE, BootMAE improves the baseline with 2 core designs: 1) momentum encoder that provides online feature as extra BERT prediction targets. 2) target-aware decoder that tries to reduce the pressure on the encoder to memorize target-specific information in BERT pretraining. [link](https://arxiv.org/pdf/2207.07116.pdf) 
+
+## On the Importance of Hyperparameters and Data Augmentation for Self-Supervised Learning
+
+Hyperparameterize data augmentation and hyperparameter of self-supervised learning. Introduce a new automated data augmentation algorithm called GroupAugment, which considers groups of augmentations and optimizes the sampling across groups. 
+
+## NSNet: Non-saliency Suppression Sampler for Efficient Video Recognition
+
+Propose a novel non-saliency suppression network that suppresses the responses of non-salient frames. The whole model consists of 2 modules, video glimpse module and frame scrutinize module. Basically, the saliency of each frame is computed by temporal attention. And the prototype distance between salient frame and non-salienct frame is pulled larger. [link](https://arxiv.org/pdf/2207.10388.pdf)
+
+## Temporal Saliency Query Network for Efficient Video Recognition
+
+Using text prompts and visual & text embedding attention weights to guide which frame to drop. [link](https://arxiv.org/pdf/2207.10379.pdf)
+
+## GOCA: Guided Online Cluster Assignment for Self-Supervised Video Representation Learning
+
+SwAV + flow. [link](https://arxiv.org/pdf/2207.10158.pdf)
+
+## Tip-Adapter: Training-free Adaption of CLIP for Few-shot Classification
+
+(CUHK) Training-free adaption method for CLIP. Constructs the adapter via a key-value cache model from the few-shot training set, and updates the prior knowledge encoded in CLIP by feature retrieval. 
+
