@@ -577,7 +577,7 @@ BootMAE, a new approach for vision BERT pretraining. Compares to MAE, BootMAE im
 
 ## On the Importance of Hyperparameters and Data Augmentation for Self-Supervised Learning
 
-Hyperparameterize data augmentation and hyperparameter of self-supervised learning. Introduce a new automated data augmentation algorithm called GroupAugment, which considers groups of augmentations and optimizes the sampling across groups. 
+Hyperparameterize data augmentation and hyperparameter of self-supervised learning. Introduce a new automated data augmentation algorithm called GroupAugment, which considers groups of augmentations and optimizes the sampling across groups. Given some groups of data augmentations. GroupAugment uses one global hyperparameter and two sets of group-specific hyperparameters to create a list of augmentation sequences. [link](https://arxiv.org/pdf/2207.07875.pdf)
 
 ## NSNet: Non-saliency Suppression Sampler for Efficient Video Recognition
 
@@ -593,5 +593,22 @@ SwAV + flow. [link](https://arxiv.org/pdf/2207.10158.pdf)
 
 ## Tip-Adapter: Training-free Adaption of CLIP for Few-shot Classification
 
-(CUHK) Training-free adaption method for CLIP. Constructs the adapter via a key-value cache model from the few-shot training set, and updates the prior knowledge encoded in CLIP by feature retrieval. 
+(CUHK) Training-free adaption method for CLIP. Constructs the adapter via a key-value cache model from the few-shot training set, and updates the prior knowledge encoded in CLIP by feature retrieval. Discards the conventional SGD-based training by directly setting the adapter with a cache model. 
 
+Conduct a cache model to adapt CLIP on downstream tasks. For each training image. utilize the CLIP's pre-trained visual encoder to extract its C-dimensional L2 normalized feature, and convert its ground-truth label into an N-dimensional one-hot vector. The few-shot classification problem is transformed to retrieval problem. [link](https://arxiv.org/pdf/2207.09519.pdf)
+
+## TokenMix: Rethinking Image Mixing for Data Augmentation in Vision Transformers
+
+(CUHK, MMLab) TokenMix mixes images at token-level to encouratge better learning of long-range dependency and also generates more reasonable target scores according to content-based neural activation maps. [link](https://arxiv.org/pdf/2207.08409.pdf)
+
+## Is an Object-Centric Video Representation Beneficial for Transfer?
+
+(AZ, VGG) Learn an object-centric video representation with the aim of improving transferability to novel tasks. (Pre-training is action classification, downstream is TAL or something.) The object-centric model outperforms prior video prepresentations when : (1) classifying actions on unseen objects and unseen environments; (2) low-shot learning to novel classes; (3) linear probe to other downstream tasks; as well as (4) for standard action classification. 
+
+
+
+## Time Is MattEr: Temporal Self-supervision for Video Transformers
+
+Video transformers are still biased to learn spatial dynamics rather than temporal ones, debiasing the spurious correlation is critical for their performance. The authors propose simple yet effective self-supervised tasks for video models to learn temporal dynamics better. The temporal order of video frames is used as extra self-supervision and enforces the randomly shuffled frames to have low-confidence outputs. Also, the model learns the temporal flow direction of video tokens among consecutive frames for enhancing the correlation toward temporal dynamics. [link](https://arxiv.org/pdf/2207.09067.pdf)
+
+## 
