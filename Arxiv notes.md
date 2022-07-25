@@ -603,9 +603,11 @@ Conduct a cache model to adapt CLIP on downstream tasks. For each training image
 
 ## Is an Object-Centric Video Representation Beneficial for Transfer?
 
-(AZ, VGG) Learn an object-centric video representation with the aim of improving transferability to novel tasks. (Pre-training is action classification, downstream is TAL or something.) The object-centric model outperforms prior video prepresentations when : (1) classifying actions on unseen objects and unseen environments; (2) low-shot learning to novel classes; (3) linear probe to other downstream tasks; as well as (4) for standard action classification. 
+(AZ, VGG) Learn an object-centric video representation with the aim of improving transferability to novel tasks. (Pre-training is action classification, downstream is TAL or something.) The object-centric model outperforms prior video representations when : (1) classifying actions on unseen objects and unseen environments; (2) low-shot learning to novel classes; (3) linear probe to other downstream tasks; as well as (4) for standard action classification. 
 
+There are two types of inputs for object-centric learning architectures. One is the input of the model is assumed to just be RGB pixels, and the object boxes are obtained downstream. The other assumes object boxes as input and focuses on efficient fusion of the two streams. 
 
+The model consists of four modules, each based on a transformer: Video encoder, trajectory encoder, object learner, classification module. The video and trajectory encoder takes RGB and bounding-box/ object ID embeddings respectively. The object learner is a cross-transformer that aims at fusing both modalities. The classification module ingests the outputs from the object learner to predict the action class of the video. [link](https://arxiv.org/pdf/2207.10075.pdf)
 
 ## Time Is MattEr: Temporal Self-supervision for Video Transformers
 
